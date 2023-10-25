@@ -10,7 +10,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
   return (
     <>
       <main>
-        <nav className='mb-24'>
+        <nav className=''>
           <NavBar />
           <CategoriesNav/>
         </nav>
