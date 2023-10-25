@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.search-bar-item {
+  @apply font-medium text-sm flex space-x-2 hover:rounded-full p-2 hover:bg-gray-200 transform hover:scale-x-105 hover:cursor-pointer;
+}
+.search-bar-input {
+  @apply font-medium text-sm bg-transparent border-none focus:outline-none focus:ring-0 p-0 text-gray-400 hover:cursor-pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.search-bar-input .ant-picker-input > input::placeholder {
+  @apply text-sm font-medium text-gray-400 hover:cursor-pointer;
 }
 
 body {
