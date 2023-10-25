@@ -94,7 +94,7 @@ const Search = () => {
             className='search-bar-input text-lg'
             style={{ fontSize: 'text-lg' }}
             suffixIcon={<span style={{ display: 'none' }}></span>}
-            clearIcon={<span style={{ display: 'none' }}></span>}
+            clearIcon={<span style={{ backgroundColor:'transparent'}}>x</span>}
           />
         </div>
         <div className='search-bar-item flex-col col-span-2 '>
@@ -105,7 +105,7 @@ const Search = () => {
             placeholder='Add dates'
             className='search-bar-input'
             suffixIcon={<span style={{ display: 'none' }}></span>}
-            clearIcon={<span style={{ display: 'none' }}></span>}
+            clearIcon={<span style={{ backgroundColor:'transparent'}}>x</span>}
           />
         </div>
         <div className='search-bar-item flex-row justify-between col-span-3'>
