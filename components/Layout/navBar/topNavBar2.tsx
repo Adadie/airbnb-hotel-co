@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { BiGlobe } from 'react-icons/bi';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-interface TopNavBarProps {
+interface TopNavBar2Props {
   children: ReactNode;
 }
 
@@ -27,26 +27,15 @@ const navItems = [
   },
 ];
 
-const TopNavBar: React.FC<TopNavBarProps> = ({ children }) => {
+const TopNavBar2: React.FC<TopNavBar2Props> = ({ children }) => {
   return (
-    <div className='flex flex-col place-items-center space-y-20 border-b pb-10'>
+    <div className='flex flex-col place-items-center space-y-20 border-b pb-24'>
       <div className='p-4 w-full grid grid-flow-row grid-cols-3 absolute top-0 items-center'>
         <Link href={'/'}>
         <Image alt='Airbnb' src={'/images/logo.png'} width={105} height={100} className='ml-10' />
         </Link>
         <div className='flex flex-row items-center space-x-8 justify-self-center'>
-          {navItems.map((item) => (
-            <Link
-              href={item.path}
-              className={
-                item.activeClass
-                  ? item.activeClass
-                  : 'text-gray-500 font-medium text-sm hover:text-gray-800'
-              }
-            >
-              {item.label}
-            </Link>
-          ))}
+        {children}
         </div>
         <div className='flex flex-row items-center space-x-4 justify-self-end'>
           <div className='rounded-full text-sm font-medium px-4 py-2 hover:bg-gray-200 hover:cursor-pointer'>
@@ -65,9 +54,8 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ children }) => {
           </div>
         </div>
       </div>
-      {children}
     </div>
   );
 };
 
-export default TopNavBar;
+export default TopNavBar2;

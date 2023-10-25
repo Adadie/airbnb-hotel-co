@@ -15,7 +15,7 @@ import {
 import Link from 'next/link';
 
 import 'swiper/swiper-bundle.css';
-import { BiFilter, BiToggleRight } from 'react-icons/bi';
+import { BiFilter } from 'react-icons/bi';
 
 SwiperCore.use([Navigation]);
 
@@ -116,6 +116,61 @@ const CategoriesNav: React.FC = () => {
       label: 'Countryside',
       icon: <GiHillFort />,
     },
+    {
+      id: 17,
+      label: 'Homeboats',
+      icon: <GiShoonerSailboat />,
+    },
+    {
+      id: 18,
+      label: 'Views',
+      icon: <FaMountainCity />,
+    },
+    {
+      id: 19,
+      label: 'Countryside',
+      icon: <GiHillFort />,
+    },
+    {
+      id: 20,
+      label: 'Cities',
+      icon: <BsFillBuildingsFill />,
+    },
+    {
+      id: 21,
+      label: 'Top',
+      icon: <GiHillConquest />,
+    },
+    {
+      id: 22,
+      label: 'Tropical 2',
+      icon: <GiPalmTree />,
+    },
+    {
+      id: 23,
+      label: 'New',
+      icon: <GiStarKey />,
+    },
+    {
+      id: 13,
+      label: 'Mansion',
+      icon: <GiCastle />,
+    },
+    {
+      id: 24,
+      label: 'Boat',
+      icon: <GiShoonerSailboat />,
+    },
+    {
+      id: 25,
+      label: 'Hillside',
+      icon: <FaMountainCity />,
+    },
+    {
+      id: 26,
+      label: 'Countryside',
+      icon: <GiHillFort />,
+    },
   ];
 
   const itemsPerPage = 10;
@@ -138,14 +193,12 @@ const CategoriesNav: React.FC = () => {
   const visibleNavItems = navItems.slice(startIndex, endIndex);
 
   return (
-    <div className='w-full h-36 px-4 py-1 grid grid-flow-row grid-cols-4 gap-3 overflow-hidden '>
+    <div className='h-36 px-4 py-1 grid grid-flow-row grid-cols-4 gap-3 overflow-hidden '>
       <div className='w-full flex flex-row items-center justify-start col-span-3'>
         <div
           onClick={prevSlide}
-          className={`h-6 w-6 text-gray-600 m-0 hover:cursor-pointer border rounded-full shadow ${
-            isBeginning
-              ? 'opacity-30 cursor-not-allowed'
-              : 'group-hover:text-blue-400'
+          className={`h-6 w-6 text-gray-950 justify-self-end ml-auto border border-gray-400 rounded-full  hover:cursor-pointer inline-flex items-center justify-center ${
+            currentSlide == 0 ? 'hidden' : 'group-hover:text-blue-400'
           }`}
         >
           {<FaChevronLeft />}
@@ -155,7 +208,9 @@ const CategoriesNav: React.FC = () => {
             <Link
               key={item.id}
               href='#'
-              className={`${item.className ? item.className: 'text-gray-600'} text-sm py-3 font-medium  flex flex-col items-center space-y-2 hover:text-gray-950 hover:border-b-2`}
+              className={`${
+                item.className ? item.className : 'text-gray-600'
+              } text-sm py-3 font-medium  flex flex-col items-center space-y-2 hover:text-gray-950 hover:border-b-2`}
             >
               <div
                 className={`${item.className && item.className} icon text-xl`}
@@ -169,8 +224,8 @@ const CategoriesNav: React.FC = () => {
         <div
           onClick={nextSlide}
           className={`h-6 w-6 text-gray-950 justify-self-end ml-auto border border-gray-400 rounded-full  hover:cursor-pointer inline-flex items-center justify-center ${
-            isEnd
-              ? 'opacity-30 cursor-not-allowed'
+            currentSlide == totalPages - 1
+              ? 'hidden'
               : 'group-hover:text-blue-400'
           }`}
         >
@@ -185,7 +240,7 @@ const CategoriesNav: React.FC = () => {
           <span>Display total before taxes</span>
           <label className='relative inline-flex items-center cursor-pointer'>
             <input type='checkbox' value='' className='sr-only peer' />
-            <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-hover:ring-1 peer-hover:ring-gray-500 peer-focus:ring-0 peer-focus:ring-gray-950  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-950"></div>
+            <div className="w-9 h-6 bg-gray-300 rounded-full peer peer-hover:ring-1 peer-hover:ring-gray-500 peer-focus:ring-0 peer-focus:ring-gray-950  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-950"></div>
           </label>
         </button>
       </div>

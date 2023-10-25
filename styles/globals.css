@@ -14,7 +14,7 @@
 }
 
 .custom-button{
-  @apply flex flex-row justify-between items-center border text-gray-800 font-medium text-sm space-x-2 py-2 px-4 rounded-xl hover:shadow;
+  @apply flex flex-row justify-between items-center border text-gray-800 font-medium text-sm space-x-2 py-1 px-3 rounded-xl hover:shadow;
 }
 
 
