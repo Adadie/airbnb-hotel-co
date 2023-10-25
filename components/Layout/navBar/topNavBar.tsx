@@ -29,10 +29,10 @@ const navItems = [
 
 const TopNavBar: React.FC<TopNavBarProps> = ({ children }) => {
   return (
-    <div className='flex flex-col items-center space-y-20 border-b pb-10'>
+    <div className='flex flex-col place-items-center space-y-20 border-b pb-10'>
       <div className='p-4 w-full grid grid-flow-row grid-cols-3 absolute top-0 items-center'>
-        <Image alt='Airbnb' src={'/images/logo.png'} width={105} height={100} />
-        <div className='flex flex-row items-center space-x-8'>
+        <Image alt='Airbnb' src={'/images/logo.png'} width={105} height={100} className='ml-10' />
+        <div className='flex flex-row items-center space-x-8 justify-self-center'>
           {navItems.map((item) => (
             <Link
               href={item.path}
@@ -46,8 +46,8 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ children }) => {
             </Link>
           ))}
         </div>
-        <div className='flex flex-row items-center space-x-4'>
-          <div className='rounded-full font-medium px-4 py-2 hover:bg-gray-200 hover:cursor-pointer'>
+        <div className='flex flex-row items-center space-x-4 justify-self-end'>
+          <div className='rounded-full text-sm font-medium px-4 py-2 hover:bg-gray-200 hover:cursor-pointer'>
             Airbnb your home
           </div>
           <div className='text-gray-800 rounded-full px-2 py-2 hover:bg-gray-200 hover:cursor-pointer'>
