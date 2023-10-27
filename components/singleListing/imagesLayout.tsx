@@ -19,8 +19,9 @@ const ImagesLayout: React.FC<ImagesLayoutProps> = () => {
           className='row-span-2 rounded-l-xl h-full w-full'
         />
         <div className='grid grid-flow-row grid-cols-2 gap-2'>
-          {images.map((image) => (
+          {images.map((image, index) => (
             <img
+              key={index}
               src={image.path}
               alt='image'
               className={`${image.className && image.className} h-full w-full`}

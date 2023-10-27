@@ -32,11 +32,18 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ children }) => {
     <div className='flex flex-col place-items-center space-y-20 border-b pb-10'>
       <div className='p-4 w-full grid grid-flow-row grid-cols-3 absolute top-0 items-center'>
         <Link href={'/'}>
-        <Image alt='Airbnb' src={'/images/logo.png'} width={105} height={100} className='ml-10' />
+          <Image
+            alt='Airbnb'
+            src={'/images/logo.png'}
+            width={105}
+            height={100}
+            className='ml-10'
+          />
         </Link>
         <div className='flex flex-row items-center space-x-8 justify-self-center'>
           {navItems.map((item) => (
             <Link
+              key={item.id}
               href={item.path}
               className={
                 item.activeClass
