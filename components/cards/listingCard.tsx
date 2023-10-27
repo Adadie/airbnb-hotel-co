@@ -5,8 +5,8 @@ import { FaHeart } from 'react-icons/fa'; // Import the heart icon
 interface ListingCardProps {
   name: string;
   image: string;
-  price: string;
-  distance: string;
+  price: number;
+  distance: number;
   liked: boolean;
 }
 

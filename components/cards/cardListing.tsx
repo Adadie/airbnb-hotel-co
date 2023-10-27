@@ -1,7 +1,10 @@
 import React from 'react';
 import ListingCard from './listingCard';
+import { Listing } from '@/types/listing';
 
-interface CardListingProps {}
+interface CardListingProps {
+  listings: Listing[];
+}
 
 const listingItems = [
   {
@@ -101,15 +104,15 @@ const listingItems = [
     liked: false,
   },
 ];
-const CardListing: React.FC<CardListingProps> = () => {
+const CardListing: React.FC<CardListingProps> = ({ listings }) => {
   return (
     <div className='w-full p-4'>
       <div className='grid grid-row grid-cols-4 gap-10 gap-y-96'>
-        {listingItems.map((item, index) => (
+        {listings.map((item, index) => (
           <div key={index}>
             <ListingCard
               liked={item.liked}
-              name={item.name}
+              name={item.location}
               image={item.image}
               distance={item.distance}
               price={item.price}
