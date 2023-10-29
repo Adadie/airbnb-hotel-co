@@ -108,17 +108,19 @@ const CardListing: React.FC<CardListingProps> = ({ listings }) => {
   return (
     <div className='w-full p-4'>
       <div className='grid grid-row grid-cols-4 gap-10 gap-y-96'>
-        {listings.map((item, index) => (
-          <div key={index}>
-            <ListingCard
-              liked={item.liked}
-              name={item.location}
-              image={item.image}
-              distance={item.distance}
-              price={item.price}
-            />
-          </div>
-        ))}
+        {listings &&
+          listings.length > 0 &&
+          listings.map((item, index) => (
+            <div key={index}>
+              <ListingCard
+                liked={item.liked}
+                name={item.location}
+                image={item.image}
+                distance={item.distance}
+                price={item.price}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );
