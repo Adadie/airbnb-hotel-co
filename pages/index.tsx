@@ -6,6 +6,7 @@ import { Listing } from '@/types/listing';
 import LandingPageSkeleton from '@/components/skeletons/landingPage';
 import { useInView } from 'react-intersection-observer';
 import SpinnerComponent from '@/components/spinner';
+import { BiArrowToTop } from 'react-icons/bi';
 
 export default function Home({
   initialListings,
@@ -50,6 +51,17 @@ export default function Home({
     }
   }, [inView]);
 
+  const scrollToTop = () => {
+    try {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    } catch (error) {
+      console.error('Error caught scrollToTop()', error);
+    }
+  };
+
   return (
     <HomeLayout>
       {loading ? (
@@ -64,6 +76,12 @@ export default function Home({
           </div>
         </div>
       )}
+      <div
+        className='fixed bottom-5 right-5 text-2xl shadow-lg hover:shadow-2xl hover:cursor-pointer'
+        onClick={scrollToTop}
+      >
+        <BiArrowToTop />
+      </div>
     </HomeLayout>
   );
 }
